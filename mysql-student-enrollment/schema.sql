@@ -1,9 +1,3 @@
--- schema.sql
-
--- Drop existing tables if they exist (for resetting during development)
-DROP TABLE IF EXISTS enrollments;
-DROP TABLE IF EXISTS students;
-DROP TABLE IF EXISTS courses;
 
 -- Students table
 CREATE TABLE students (

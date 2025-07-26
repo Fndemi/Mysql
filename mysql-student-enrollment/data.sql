@@ -1,7 +1,3 @@
--- Clear existing data if needed (optional for reset)
-DELETE FROM enrollments;
-DELETE FROM students;
-DELETE FROM courses;
 
 -- Insert at least 5 distinct student records
 INSERT INTO students (name, email, dob, program)
