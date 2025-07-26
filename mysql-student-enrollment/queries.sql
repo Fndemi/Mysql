@@ -42,3 +42,19 @@ SELECT
 FROM courses c
 LEFT JOIN enrollments e ON c.id = e.course_id
 GROUP BY c.id, c.course_name, c.course_code;
+-- 4. Stored Procedure: Enroll a student and assign a grade
+DELIMITER $$
+
+CREATE PROCEDURE enroll_student (
+    IN p_student_id INT,
+    IN p_course_id INT,
+    IN p_date_enrolled DATE,
+    IN p_grade VARCHAR(2)
+)
+BEGIN
+    INSERT INTO enrollments (student_id, course_id, date_enrolled, grade)
+    VALUES (p_student_id, p_course_id, p_date_enrolled, p_grade);
+END$$
+
+DELIMITER ;
+
